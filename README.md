@@ -14,6 +14,10 @@ Users receive a token that they can use to activate access for a predefined peri
 
 The scripts and landing page are located in the `wwwnds` directory, which is copied to the router’s root directory (`/`).
 
+## Who is this for?
+
+This is for parents who want local, cloud-free time limits for their Kids on OpenWRT routers.
+
 ## How it works (high level)
 
 1. A firewall rule blocks internet access for specific MAC addresses.
