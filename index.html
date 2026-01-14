@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Passwortprüfung (CGI-Shell)</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, button { padding: 10px; font-size: 1em; margin-top: 10px; }
+    #result { margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2>Bitte Passwort eingeben:</h2>
+  <form action="/cgi-bin/check_password.sh" method="post">
+    <input type="password" name="password" placeholder="Passwort eingeben" required>
+    <br>
+    <button type="submit">Überprüfen</button>
+  </form>
+
+</body>
+</html>
+

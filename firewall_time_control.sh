@@ -68,10 +68,11 @@ done < "$PASSWORD_FILE"
 
 # Firewall neu laden, wenn Änderungen erfolgt sind
 if [ "$FIREWALL_CHANGED" = "1" ]; then
-    uci commit firewall
-    /etc/init.d/firewall reload
+    uci commit firewall >> "$LOG_FILE" 2>&1
+    /etc/init.d/firewall reload >> "$LOG_FILE" 2>&1
+    SCRIPT_DIR="$(dirname "$0")"
+    "$SCRIPT_DIR/connkill.sh" Kinder >> "$LOG_FILE" 2>&1
     echo "$(date +"%Y-%m-%d %H:%M:%S") - Firewall neu geladen" >> "$LOG_FILE"
 else
     echo "$(date +"%Y-%m-%d %H:%M:%S") - Keine Änderungen nötig" >> "$LOG_FILE"
 fi
-

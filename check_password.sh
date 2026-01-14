@@ -87,4 +87,3 @@ fi
 
 echo '<p><a href="/index.html">Zurück</a></p>'
 echo "</body></html>"
-
